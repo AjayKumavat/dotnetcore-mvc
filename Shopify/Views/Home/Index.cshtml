@@ -1,0 +1,170 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <link href="~/css/style.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="sticky-top">
+        <a href="#header">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <header class="header" id="header">
+
+        <div class="row">
+            <div class="col-1-of-2 header__img-box">
+                <img src="~/img/Hero.svg" alt="Add to cart" class="header__hero-img">
+            </div>
+
+            <div class="col-1-of-2">
+                <div class="header__hero-text">
+                    <h1 class="u-flex-center u-margin-top-big">
+                        <span class="heading-primary--main">Shopify</span>
+                        <span class="heading-primary--sub">We deliver quality</span>
+                    </h1>
+
+                    <a asp-controller="Products" asp-action="AllProductList" class="btn btn--main u-margin-top-big u-margin-right-small">
+                        <span class="heading--gradient-color">Our Products</span>
+                    </a>
+
+                    <a href="#section-function" class="btn btn--ghost u-margin-top-big">
+                        <span>Show More</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- SECTION FEATURES -->
+    <section class="section-features">
+
+        <h2 class="heading-secondary">Operations</h2>
+
+        <div class="row">
+
+            <!-- Column 1 -->
+            <div class="col-1-of-4">
+
+                <div class="feature-box">
+
+                    <!-- icon -->
+                    <i class="feature-box__icon fas fa-plus-circle"></i>
+
+                    <!-- heading 3 -->
+                    <div class="feature-box__text-box">
+                        <h3>Create</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-1-of-4">
+
+                <div class="feature-box">
+
+                    <!-- icon -->
+                    <i class="feature-box__icon fab fa-readme"></i>
+
+                    <!-- heading 3 -->
+                    <div class="feature-box__text-box">
+                        <h3>Read</h3>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-1-of-4">
+
+                <div class="feature-box">
+
+                    <!-- icon -->
+                    <i class="feature-box__icon fas fa-sync-alt"></i>
+
+                    <!-- heading 3 -->
+                    <div class="feature-box__text-box">
+                        <h3>Update</h3>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-1-of-4">
+
+                <div class="feature-box">
+
+                    <!-- icon -->
+                    <i class="feature-box__icon fas fa-trash"></i>
+
+                    <!-- heading 3 -->
+                    <div class="feature-box__text-box">
+                        <h3>Delete</h3>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="section-function" class="section-product-and-category">
+        <h2 class="heading-secondary heading-secondary--white">Our Products and Categories</h2>
+
+        <div class="row">
+
+            <div class="col-1-of-2">
+                <div class="function__box">
+                    <h4 class="heading-4 u-margin-bottom-small">Products</h4>
+
+                    <p class="function__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, atque exercitationem? Officiis reiciendis quibusdam accusantium quod minus recusandae vero animi?</p>
+
+                    <a asp-controller="Products" asp-action="list" class="btn btn-feature u-margin-top-small">Manage Products</a>
+                </div>
+            </div>
+
+            <div class="col-1-of-2">
+                <div class="function__box">
+                    <h4 class="heading-4 u-margin-bottom-small">Categories</h4>
+
+                    <p class="function__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, atque exercitationem? Officiis reiciendis quibusdam accusantium quod minus recusandae vero animi?</p>
+
+                    <a asp-controller="Categories" asp-action="Index" class="btn btn-feature u-margin-top-small">Manage Categories</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Shopify.Models.ProductDetails>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="section__gradient section__form section__form-link">
+    <div class="container body-content">
+        <h2 class="heading-secondary heading-secondary--white u-margin-top-huge">Products List</h2>
+
+        <p class="u-margin-bottom-small">
+            <a asp-action="Product">Add Product</a>
+            <a asp-controller="Categories" asp-action="Category">Add Category</a>
+        </p>
+        <table id="example" class="table u-margin-bottom-medium">
+            <thead>
+                <tr>
+                    <th>ProductId</th>
+                    <th>ProductName</th>
+                    <th>CategoryId</th>
+                    <th>CategoryName</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-dark">@Html.DisplayFor(modelItem => item.productDetails.ProductId)</td>
+                    <td class="text-dark">@Html.DisplayFor(modelItem => item.productDetails.ProductName)</td>
+                    <td class="text-dark">@Html.DisplayFor(modelItem => item.categoryDetails.CategoryId)</td>
+                    <td class="text-dark">@Html.DisplayFor(modelItem => item.categoryDetails.CategoryName)</td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</section>
+
+@section scripts {
+
+    <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+
+}
+

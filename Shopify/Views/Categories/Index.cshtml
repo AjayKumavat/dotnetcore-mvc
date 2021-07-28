@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Shopify.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="section__gradient section__form section__form-link">
+    <div class="container body-content">
+        <h2 class="heading-secondary heading-secondary--white u-margin-top-huge">Manage Categories</h2>
+
+        <p>
+            <a class="btn btn--ghost" asp-action="Category">Add Category</a>
+        </p>
+        <table id="table" class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoryName)
+                        </td>
+                        <td>
+                            
+                            <a class="btn btn--ghost" href="@Url.Action("Category", new { item.CategoryId, item.CategoryName })" >
+                                Edit
+                            </a>
+                            <a class="btn btn--ghost" asp-action="Delete" asp-route-id="@item.CategoryId">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
